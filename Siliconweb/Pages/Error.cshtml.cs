@@ -24,5 +24,4 @@ namespace Siliconweb.Pages
             RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier;
         }
     }
-
 }
