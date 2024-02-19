@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34525.116
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Siliconweb", "Siliconweb\Siliconweb.csproj", "{5CA8327B-88DF-4EE7-A3C9-3678F3307349}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SiliconApi", "SiliconApi\SiliconApi.csproj", "{6A523A6D-3236-43B3-AB08-663B02A5A35A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Siliconweb", "Siliconweb\Siliconweb.csproj", "{BFC1D286-ADF6-47CC-95A1-E0D8540EA3FD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +13,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{5CA8327B-88DF-4EE7-A3C9-3678F3307349}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5CA8327B-88DF-4EE7-A3C9-3678F3307349}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5CA8327B-88DF-4EE7-A3C9-3678F3307349}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5CA8327B-88DF-4EE7-A3C9-3678F3307349}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A523A6D-3236-43B3-AB08-663B02A5A35A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A523A6D-3236-43B3-AB08-663B02A5A35A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A523A6D-3236-43B3-AB08-663B02A5A35A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A523A6D-3236-43B3-AB08-663B02A5A35A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BFC1D286-ADF6-47CC-95A1-E0D8540EA3FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BFC1D286-ADF6-47CC-95A1-E0D8540EA3FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BFC1D286-ADF6-47CC-95A1-E0D8540EA3FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BFC1D286-ADF6-47CC-95A1-E0D8540EA3FD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
