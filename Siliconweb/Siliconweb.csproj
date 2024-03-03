@@ -28,11 +28,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Models\" />
-      <Folder Include="wwwroot\css\scss\" />
-    </ItemGroup>
-
-    <ItemGroup>
       <None Include="compilerconfig.json" />
     </ItemGroup>
 

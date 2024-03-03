@@ -1,0 +1,24 @@
+﻿@model ShowcaseViewModel
+
+
+<section id="@Model.Id" class="showcase">
+    <img class="background-img" src="@Model.ShowcaseImage.ImageUrl" alt=" @Model.ShowcaseImage.AltText"></img>
+    <div class="container">
+        <div class="content">
+            <div class="left-side">
+            <h1>@Model.Title</h1>
+            <p>
+               @Model.Text
+            </p>
+            <a class="btn-theme-s" asp-controller="@Model.Link.ControllerName" asp-action="@Model.Link.ActionName">@Model.Link.Text</a>
+            <h6>@Model.LargestBrandText</h6>
+            <div class="brands">
+                <img src="./images/hometop/squarebrand.svg">
+                <img src="./images/hometop/moonbrand.svg">
+                <img src="./images/hometop/threestreaksbrand.svg">
+                <img src="./images/hometop/wavesbrand.svg">
+            </div>
+        </div>
+    </div>
+    </div>
+</section>
