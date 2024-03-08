@@ -1,3 +1,12 @@
+@model SignUpViewModel
 @{
-    ViewData["Title"] = "Sign up";
+    ViewData["Title"] = Model.Tilte;
 }
+
+<section id="signup">
+    <div class="container">
+        <form method="post" asp-controller="Auth" asp-action="SignUp">
+            <button class="btn-theme-s" type="submit">@Model.Tilte</button>
+        </form>
+    </div>
+</section>
