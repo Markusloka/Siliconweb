@@ -1,11 +1,11 @@
 @model SignUpViewModel
 @{
-    ViewData["Title"] = Model.Tilte;
+    ViewData["Title"] = Model.Title;
 }
 
 <section id="signup">
     <div class="container">
-        <form method="post" asp-controller="Auth" asp-action="SignUp">
+        <form method="post" asp-controller="Auth" asp-action="SignUp" novalidate>
             <h1> Create Account</h1>
             <p>Already have an account? <a asp-controller="Auth" asp-action="SignIn">Sign in here</a>.</p>
             <div class="content">
@@ -36,11 +36,11 @@
                 </div>
                 <div id="form-terms" class="checkbox-group">
                     <input asp-for="Form.TermsAndConditions"/>
-                    <label asp-for="Form.TermsAndConditions"> I agree to the <a asp-controller="About" asp-action="Terms"> Terms</a> & <a asp-controller="About" asp-action="Conditions">Conditions</a></label>
+                    <label asp-for="Form.TermsAndConditions"> I agree to the <a asp-controller="" asp-action=""> Terms</a> & <a asp-controller="" asp-action="">Conditions</a></label>
                     <span asp-validation-for="Form.TermsAndConditions"></span>
                 </div>
             </div>
-            <button class="btn-theme-s" type="submit">@Model.Tilte</button>
+            <button class="btn-theme-s" type="submit">@Model.Title</button>
         </form>
     </div>
 </section>
