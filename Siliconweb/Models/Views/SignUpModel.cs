@@ -1,3 +1,5 @@
+using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
+using Siliconweb.Helpers;
 using System.ComponentModel.DataAnnotations;
 
 namespace Siliconweb.Models.Views;
@@ -31,14 +33,19 @@ public class SignUpModel
 
     
     [Display(Name = "Confirm password", Prompt = "Confirm your password", Order = 4)]
-    [Required(ErrorMessage = "Invalid Password")]
+    [Required(ErrorMessage = "Password must be confirmed")]
     [DataType(DataType.Password)]
     [Compare(nameof(Password), ErrorMessage = "Password does not match")]
     public string ConfirmPassword { get; set; } = null!;
     
     
     [Display(Name = "I agree to the terms & conditions.", Order = 5)]
-    [Required(ErrorMessage = "Please accept the terms")]
+    [CheckBoxRequired(ErrorMessage = "You must accept the terms and conditions")]
+
 
     public bool TermsAndConditions { get; set; } = false;
 }
+
+
+
+    
