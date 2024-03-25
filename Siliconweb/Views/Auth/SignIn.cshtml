@@ -1,7 +1,34 @@
 @model SignInViewModel
-
 @{
-    Layout = null;
+    ViewData["Title"] = Model.Title;
 }
 
-<section id="signin"></section>
+<section id="signin">
+    <div class="container">
+        
+        <form method="post" asp-controller="Auth" asp-action="SignIn" novalidate>
+            <div asp-validation-summary="All" ></div>
+            <h1> Welcome back</h1>
+            <p>Don't have an account? <a asp-controller="Auth" asp-action="SignUp">Sign up here</a>.</p>
+            <div class="content">
+                <div id="form-email" class="input-group">
+                    <label asp-for="Form.Email"></label>
+                    <span asp-validation-for="Form.Email"></span>
+                    <input asp-for="Form.Email"/>
+                </div>
+                <div id="form-password" class="input-group">
+                    <label asp-for="Form.Password"></label>
+                    <span asp-validation-for="Form.Password"></span>
+                    <input asp-for="Form.Password"/>
+                </div>
+
+                <div id="form-remember" class="checkbox-group">
+                    <input asp-for="Form.RememberMe"/>
+                    <label asp-for="Form.RememberMe"></label>
+                </div>
+            </div>
+            <button id="form-submit" class="btn-theme-s" type="submit">@Model.Title</button>
+            <a id="form-forgot-password"> Forgot your password?</a>
+        </form>
+    </div>
+</section>
