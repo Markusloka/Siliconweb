@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Siliconweb.Models.Sections;
-using Siliconweb.Models.Views;
+using Siliconweb.ViewModels;
 
 namespace Siliconweb.Controllers;
 
