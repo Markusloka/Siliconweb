@@ -6,4 +6,6 @@ public class SignInViewModel
     public SignInModel Form { get; set; } = new SignInModel();
 
     public bool RememberMe { get; set; } = false;
+    public string? ErrorMessage { get; set; }
+
 }

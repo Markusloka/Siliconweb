@@ -7,7 +7,9 @@
     <div class="container">
         
         <form method="post" asp-controller="Auth" asp-action="SignIn" novalidate>
-            <div asp-validation-summary="All" ></div>
+            <div>
+                @Model.ErrorMessage
+            </div>
             <h1> Welcome back</h1>
             <p>Don't have an account? <a asp-controller="Auth" asp-action="SignUp">Sign up here</a>.</p>
             <div class="content">
@@ -26,9 +28,10 @@
                     <input asp-for="Form.RememberMe"/>
                     <label asp-for="Form.RememberMe"></label>
                 </div>
+                <button id="form-submit" class="btn-theme-s" type="submit">@Model.Title</button>
+                <a id="form-forgot-password" asp-controller="Account" asp-action="Forgot"> Forgot your password?</a>
             </div>
-            <button id="form-submit" class="btn-theme-s" type="submit">@Model.Title</button>
-            <a id="form-forgot-password"> Forgot your password?</a>
+            
         </form>
     </div>
 </section>
