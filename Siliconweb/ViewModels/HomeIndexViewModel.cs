@@ -1,6 +1,6 @@
 ﻿using Siliconweb.Models.Sections;
 
-namespace Siliconweb.Models.Views;
+namespace Siliconweb.ViewModels;
 
 public class HomeIndexViewModel
 {
