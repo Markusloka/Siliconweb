@@ -10,7 +10,7 @@ public abstract class Repo<TEntity>(DataContext context) where TEntity : class
 {
     private readonly DataContext _context = context;
 
-    public virtual async Task<ResponseResult> CreateAsync(TEntity entity)
+    public virtual async Task<ResponseResult> CreateOneAsync(TEntity entity)
     {
         try
         {
