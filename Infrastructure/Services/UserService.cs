@@ -1,4 +1,5 @@
 ﻿using Azure;
+using Infrastructure.Entities;
 using Infrastructure.Factories;
 using Infrastructure.Models;
 using Infrastructure.Repositories;
@@ -7,28 +8,39 @@ namespace Infrastructure.Services;
 
 public class UserService (UserRepository repository, AddressService addressService)
 {
-    private readonly UserRepository _repository;
-    private readonly AddressService _addressService;
+    private readonly UserRepository _repository = repository;
+    private readonly AddressService _addressService = addressService;
 
-
-    public async Task<ResponseResult> CreateUserAsync (SignUpModel model)
+    public async Task<ResponseResult> CreateUserAsync(SignUpModel model)
     {
-		try
-		{
-			var result = await _repository.AlreadyExistAsync(x => x.Email == model.Email);
-			if(result.StatusCode != StatusCode.EXISTS)
-			{
-				result = await _repository.CreateOneAsync(UserFactory.Create(model));
-				if (result.StatusCode != StatusCode.OK)
-					return ResponseFactory.Ok("User was created successfully");
+        try
+        {
+            var exists = await _repository.AlreadyExistAsync(x => x.Email == model.Email);
+            if (exists.StatusCode == StatusCode.EXISTS)
+                return exists;
 
-				return result;
-			}
-			return result;
-		}
-		catch (Exception ex)
-		{
-			return ResponseFactory.Error(ex.Message);
-		}
+            var result = await _repository.CreateOneAsync(UserFactory.Create(model));
+            if (result.StatusCode == StatusCode.OK)
+                return result;
+
+            return ResponseFactory.Ok("User was created successfully");
+        }
+        catch (Exception ex) { return ResponseFactory.Error(ex.Message); }
+    }
+
+    public async Task<ResponseResult> SignInUserAsync(SignInModel model)
+    {
+        try
+        {
+            var result = await _repository.GetOneAsync(x => x.Email == model.Email);
+            if (result.StatusCode == StatusCode.OK && result.ContentResult != null)
+            {
+                var userEntity = (UserEntity)result.ContentResult;
+                return ResponseFactory.Ok();
+            }
+
+            return ResponseFactory.Error("Incorrect email or password");
+        }
+        catch (Exception ex) { return ResponseFactory.Error(ex.Message); }
     }
 }

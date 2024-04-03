@@ -1,4 +1,4 @@
-using Siliconweb.Models.Views;
+using Infrastructure.Models;
 
 namespace Siliconweb.ViewModels;
 

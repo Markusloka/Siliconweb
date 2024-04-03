@@ -1,4 +1,5 @@
 ﻿
+using Infrastructure.Helpers;
 using System.ComponentModel.DataAnnotations;
 
 namespace Infrastructure.Models;
@@ -30,4 +31,16 @@ public class SignUpModel
         ErrorMessage = "Password must contain at least 8 characters, including at least one lowercase letter, one uppercase letter, one digit, and one special character.")]
     public string Password { get; set; } = null!;
 
+    [Display(Name = "Confirm password", Prompt = "Confirm your password", Order = 4)]
+    [Required(ErrorMessage = "Password must be confirmed")]
+    [DataType(DataType.Password)]
+    [Compare(nameof(Password), ErrorMessage = "Password does not match")]
+    public string ConfirmPassword { get; set; } = null!;
+
+
+    [Display(Name = "I agree to the terms & conditions.", Order = 5)]
+    [CheckBoxRequired(ErrorMessage = "You must accept the terms and conditions")]
+
+
+    public bool TermsAndConditions { get; set; } = false;
 }

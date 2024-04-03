@@ -42,4 +42,8 @@
       <ProjectReference Include="..\Infrastructure\Infrastructure.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="Models\Views\" />
+    </ItemGroup>
+
 </Project>

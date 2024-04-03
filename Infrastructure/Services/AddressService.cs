@@ -44,7 +44,7 @@ public class AddressService(AddressRepository repository)
     {
         try
         {
-            var result = await _repository.GetOneAsync(x =>  x.StreetName == streetName && x.PostalCode == postalCode && x.City == city)
+            var result = await _repository.GetOneAsync(x => x.StreetName == streetName && x.PostalCode == postalCode && x.City == city);
             return result;
                 }
         catch (Exception ex) { return ResponseFactory.Error(ex.Message); }

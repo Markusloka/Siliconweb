@@ -1,8 +1,6 @@
-using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
-using Siliconweb.Helpers;
-using Siliconweb.ViewModels;
-using System.ComponentModel.DataAnnotations;
-namespace Siliconweb.Models.Views;
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Infrastructure.Models;
 
 public class SignInModel
 {
@@ -11,12 +9,12 @@ public class SignInModel
     [Required(ErrorMessage = "Invalid email")]
 
     public string Email { get; set; } = null!;
-    
+
     [Display(Name = "Password", Prompt = "Enter your password", Order = 1)]
     [Required(ErrorMessage = "Invalid Password")]
     [DataType(DataType.Password)]
     public string Password { get; set; } = null!;
-    
+
     [Display(Name = "Remember Me", Order = 2)]
-     public bool RememberMe { get; set; }
+    public bool RememberMe { get; set; }
 }

@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Siliconweb.Helpers
+namespace Infrastructure.Helpers
 {
     public class CheckBoxRequired : ValidationAttribute
     {
