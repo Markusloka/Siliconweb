@@ -41,6 +41,19 @@ public class AuthController(UserService userService) : Controller
         var viewModel = new SignInViewModel();
         return View(viewModel);
     }
-    
+
+
+    [Route ("/signin")]
+    [HttpPost]
+    public async Task<IActionResult> SignIn(SignInViewModel viewModel)
+    {  if (ModelState.IsValid) 
+        {
+            var result = await _userService.SignInUserAsync(viewModel.Form);
+            if (result.StatusCode == Infrastructure.Models.StatusCode.OK)
+                return RedirectToAction("Details", "Account");  
+        }
+        viewModel.ErrorMessage = "Incorrect email or password";
+        return View(viewModel);
+    }
 
 }

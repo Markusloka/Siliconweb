@@ -1,5 +1,6 @@
 ﻿
 using Infrastructure.Entities;
+using Infrastructure.Helpers;
 using Infrastructure.Models;
 
 namespace Infrastructure.Factories;
@@ -32,13 +33,15 @@ internal class UserFactory
         try
         {
             var date = DateTime.Now;
+            var (password, securityKey) = PasswordHasher.GenerateSecurePassword(model.Password);
             return new UserEntity
             {
                 Id = Guid.NewGuid().ToString(),
                 FirstName = model.FirstName,
                 LastName = model.LastName,
                 Email = model.Email,
-                Password = model.Password,
+                Password = password,
+                SecurityKey = securityKey,
                 Created = date,
                 Modified = date
             };
