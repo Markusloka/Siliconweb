@@ -1,0 +1,8 @@
+using Infrastructure.Context;
+using Infrastructure.Entities;
+
+namespace Infrastructure.Repositories;
+public class FeatureItemRepository(DataContext context) : Repo<FeatureItemEntity>(context)
+{
+    private readonly DataContext _context = context;
+}

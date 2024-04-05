@@ -24,6 +24,7 @@ public class HomeController : Controller
                
             }
         };
+        
 
         ViewData["Title"] = viewModel.Title;
 
