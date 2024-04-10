@@ -43,6 +43,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <Folder Include="Models\Sections\" />
       <Folder Include="Models\Views\" />
     </ItemGroup>
 

@@ -1,3 +1,4 @@
+using Infrastructure.Services;
 using Microsoft.AspNetCore.Mvc;
 using Siliconweb.Models.Sections;
 using Siliconweb.ViewModels;
@@ -9,7 +10,7 @@ public class HomeController : Controller
     public IActionResult Home()
     {
 
-        var viewModel = new HomeIndexViewModel
+        var viewModel = new HomeIndexViewModel(new FeatureService())
         {
             Title = "Ultimate Task Management Assistant",
             Showcase = new ShowcaseViewModel

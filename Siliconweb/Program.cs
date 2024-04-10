@@ -10,7 +10,9 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<DataContext>(x => x.UseSqlServer(builder.Configuration.GetConnectionString("SqlServer")));
 builder.Services.AddScoped<AddressRepository>();
 builder.Services.AddScoped<UserRepository>();
+builder.Services.AddScoped<FeatureItemRepository>();
 builder.Services.AddScoped<AddressService>();
+builder.Services.AddScoped<FeatureService>();
 builder.Services.AddScoped<UserService>();
 var app = builder.Build();
 // Configure the HTTP request pipeline.
